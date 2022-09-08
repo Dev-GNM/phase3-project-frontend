@@ -67,7 +67,6 @@ function Row({ title, fetchUrl, isLargeRow, categoryLink, categoryComment }) {
             })
         setDisplayMovieDetails(!displayMovieDetails)
     }
-
     // console.log(getMovie)
     return (
         <div>
@@ -88,7 +87,6 @@ function Row({ title, fetchUrl, isLargeRow, categoryLink, categoryComment }) {
                                 <Link to={`${categoryLink}/${movie.id}`} href={`${categoryLink}/${movie.id}`} className="mov__button" style={{ textDecoration: "none", paddingTop: "1rem" }} onClick={viewComments}>
                                     View movie Details and Reviews</Link> </>}
 
-
                         </>
                     ))}
                 </div>
@@ -98,4 +96,4 @@ function Row({ title, fetchUrl, isLargeRow, categoryLink, categoryComment }) {
     )
 }
 
-export default Row
+export default Row;
