@@ -11,3 +11,20 @@ function Reviews({ movieId, category }) {
     const [likes, setLikes] = useState(0)
 
     console.log(movieId)
+
+    const getName = category.split("/").pop().slice(0, -9) + "_id"
+    // debugger;
+    console.log(getName)
+    useEffect(() => {
+        fetch(`http://localhost:9292${category}`)
+            .then(resp => resp.json())
+            .then(data => setComment(data))
+        setShowComments(!showComments)
+    }, [])
+    // function handleReviews() {
+    //     fetch(`http://localhost:9292${category}`)
+    //         .then(resp => resp.json())
+    //         .then(data => setComment(data))
+    //     setShowComments(!showComments)
+    // }
+    console.log(comment)
