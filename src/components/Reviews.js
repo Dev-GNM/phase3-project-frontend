@@ -39,3 +39,9 @@ function Reviews({ movieId, category }) {
     else if (getName === "documentary_id") { commentFilter = comment.filter(x => x.documentary_id === movieId) }
     else if (getName === "comedy_id") { commentFilter = comment.filter(x => x.comedy_id === movieId) }
     // debugger
+
+    function handleUpdate(updatedComment) {
+        const updated = comment.filter(x => x.id === updatedComment.id ? updatedComment : x)
+        setComment(updated)
+    }
+
