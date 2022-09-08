@@ -45,3 +45,22 @@ function Reviews({ movieId, category }) {
         setComment(updated)
     }
 
+    return (
+        <div className="shadow" style={{ backgroundColor: "white" }}>
+            {/* <button onClick={handleReviews}>see more</button> */}
+            <h2 className="centerText">Comments</h2>
+            <hr style={{ height: "5px", color: "black", backgroundColor: "black", width: "50%", marginLeft: "25%", marginRight: "25% !important" }}></hr>
+            <br />
+
+            {commentFilter.length == 0 ? <h4 className="centerText">No comments on this yet!! </h4> : commentFilter.map((x) => {
+                return <div className="shadow">
+                    <p className="centerText" key={x.id}><h5>Anonymous-</h5> <i>{x.comment}</i></p>
+                    <h5 className="centerText">{moment(x.created_at).format('MMMM Do YYYY')}{" "}</h5>
+                    <ReviewLikes comment={x} onUpdate={handleUpdate} category={category} />
+                </div>
+            })}
+        </div>
+    )
+}
+
+export default Reviews
