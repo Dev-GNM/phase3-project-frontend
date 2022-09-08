@@ -28,3 +28,15 @@ function Comments({ categoryComment, mov_id, handleAddComment }) {
             })
         setNewComment(" ");
     }
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="comment" onChange={(e) => setNewComment(e.target.value)}></input>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    )
+}
+
+export default Comments
