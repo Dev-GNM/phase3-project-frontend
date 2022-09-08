@@ -28,3 +28,14 @@ function Reviews({ movieId, category }) {
     //     setShowComments(!showComments)
     // }
     console.log(comment)
+
+    let commentFilter
+    if (getName === "netflix_original_id") { commentFilter = comment.filter(x => x.netflix_original_id === movieId) }
+    else if (getName === "trending_id") { commentFilter = comment.filter(x => x.trending_id === movieId) }
+    else if (getName === "romance_id") { commentFilter = comment.filter(x => x.romance_id === movieId) }
+    else if (getName === "top_rated_id") { commentFilter = comment.filter(x => x.top_rated_id === movieId) }
+    else if (getName === "action_id") { commentFilter = comment.filter(x => x.action_id === movieId) }
+    else if (getName === "horror_id") { commentFilter = comment.filter(x => x.horror_id === movieId) }
+    else if (getName === "documentary_id") { commentFilter = comment.filter(x => x.documentary_id === movieId) }
+    else if (getName === "comedy_id") { commentFilter = comment.filter(x => x.comedy_id === movieId) }
+    // debugger
